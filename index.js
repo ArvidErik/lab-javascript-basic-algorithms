@@ -70,3 +70,61 @@ switch (orderCheck) {
         break
     default: console.log("There's an error in the switch")
 }
+
+// Bonus 1:
+// Go to the lorem ipsum generator website and:
+// Generate 3 paragraphs.Store the text in a new string variable named longText.
+
+const longText = "Sed ut tempus diam. Nam venenatis dolor a molestie porttitor. Curabitur egestas lorem in consectetur blandit. Nunc posuere elementum varius. Pellentesque dignissim faucibus euismod. Proin vitae iaculis magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer tristique, magna sit amet commodo malesuada, sapien nulla mattis enim, in iaculis arcu mi a sem. Proin sit amet lorem fringilla massa laoreet viverra. Proin laoreet nisl sed ex mattis scelerisque. Suspendisse et tincidunt urna, vitae feugiat ex. Sed scelerisque tincidunt tellus non suscipit. Mauris ornare ut odio et fringilla. Donec mauris orci, auctor faucibus dolor vitae, tempor pellentesque ligula. In tristique augue et finibus cursus. Integer leo enim, vehicula ac felis in, placerat commodo quam. Sed id elementum nisl, non rhoncus justo.Morbi quis tristique lacus, ac pellentesque nibh.Morbi non urna nisl.In volutpat lacinia tortor, in posuere neque sodales vehicula.Suspendisse diam enim, mollis et faucibus sed, cursus quis ante.Donec bibendum neque sit amet ante tempor maximus vitae id dolor.Curabitur mollis diam in ipsum venenatis efficitur sit amet pharetra est.Phasellus dictum accumsan elit non rutrum.Duis justo mi, semper vitae imperdiet ac, tincidunt nec dolor.Aliquam pellentesque felis nec lacus sollicitudin tincidunt in vel neque.Nam pharetra neque eu iaculis aliquam.Sed suscipit tempus ligula id dictum.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent sed maximus justo. Etiam sed viverra mauris.Curabitur id lobortis tortor, a condimentum orci.Suspendisse quis auctor augue, in iaculis odio.Vestibulum sagittis lobortis felis non elementum.Fusce tristique in velit ac aliquet.Curabitur vel ipsum consectetur, consequat dui non, viverra orci.In vehicula tortor eget hendrerit posuere.Quisque venenatis rhoncus purus id feugiat. Sed elementum condimentum lacus, vitae aliquet lorem tristique nec."
+
+// Make your program count the number of words in the string.
+
+let numberOfWords = longText.split(" ").length + 1;
+
+console.log(`There are ${numberOfWords} words in the longText variable`);
+
+// Make your program count the number of times the Latin word et appears.
+
+let counter = 0;
+
+for (let i = 0; i <= longText.length - 1; i++) {
+    if ((longText[i] + longText[i + 1]) == "et") {
+        counter++;
+    }
+}
+
+console.log(`there are ${counter} "et" in the longText.`)
+
+
+
+// Create a new variable, phraseToCheck, containing some string value.Write a code to check if the value assigned to this variable is a Palindrome.Here are some examples of palindromes:
+
+// "A man, a plan, a canal, Panama!"
+// "Amor, Roma"
+// "race car"
+// "stack cats"
+// "step on no pets"
+// "taco cat"
+// "put it up"
+// "Was it a car or a cat I saw?" and "No 'x' in Nixon".
+//     IMPORTANT: If you use Google to help you to find a solution to this iteration, you might run into some advanced solutions that use string or array methods(such as join(), reverse(), etc.).However, we want you to apply your current knowledge and try to come up with a solution by just using the for loop and if-else statements with some break and continue.
+
+let phraseToCheck = "asgwegwg"
+
+let modPhraseToCheck1 = phraseToCheck.replaceAll(" ", "");
+let modPhraseToCheck2 = modPhraseToCheck1.replaceAll(",", "");
+let modPhraseToCheck3 = modPhraseToCheck2.replaceAll("?", "");
+let modPhraseToCheck4 = modPhraseToCheck3.replaceAll("'", "");
+
+let phreseReverse = "";
+
+for (let i = modPhraseToCheck4.length - 1; i >= 0; i--) {
+    phreseReverse += modPhraseToCheck4[i];
+}
+
+if (modPhraseToCheck4.toLowerCase() == phreseReverse.toLowerCase()) {
+    console.log("This is a Palindrome!")
+} else {
+    console.log("This is NOT a Palindrome!");
+}
+
